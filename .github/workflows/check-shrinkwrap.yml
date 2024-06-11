@@ -1,0 +1,14 @@
+name: Verify Rush shrinkwrap is up to date
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  check-shrinkwrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+      - name: Check shrinkwrap with Rush
+        run: node common/scripts/install-run-rush.js install --check-only
