@@ -11,4 +11,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.6
       - name: Check shrinkwrap with Rush
-        run: node common/scripts/install-run-rush.js install --check-only
+        run: node common/scripts/install-run-rush.js --debug install --check-only
